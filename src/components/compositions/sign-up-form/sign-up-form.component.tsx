@@ -12,6 +12,7 @@ import {
 import type { SignUpFormProps } from "./sign-up-form.types";
 
 export const SignUpForm: FunctionComponent<SignUpFormProps> = ({
+  title,
   nameInputCompositions,
   emailInputCompositions,
   emailConfirmationInputCompositions,
@@ -22,6 +23,8 @@ export const SignUpForm: FunctionComponent<SignUpFormProps> = ({
 }) => {
   return (
     <Container onSubmit={handleClick}>
+      <h1>{title}</h1>
+
       {nameInputCompositions}
 
       {emailInputCompositions}

@@ -7,6 +7,7 @@ export const Container = styled.form`
   align-items: center;
   justify-content: center;
   gap: 10px;
+  height: 100dvh;
 `;
 
 export const TermsOfUseSectionWrapper = styled.div`

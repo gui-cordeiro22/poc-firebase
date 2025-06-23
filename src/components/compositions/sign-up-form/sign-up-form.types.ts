@@ -1,13 +1,17 @@
 // Dependencies
 import type { ReactNode } from "react";
 
-export type SignUpFormData = {
+export type SignUpFormResponseData = {
   name: string;
   email: string;
   confirmEmail: string;
   phone: string;
   password: string;
   termsAccepted: boolean;
+};
+
+export type SignUpFormData = {
+  title: string;
 };
 
 export type SignUpFormElements = {
@@ -23,4 +27,6 @@ export type SignUpFormAction = {
   handleClick: () => void;
 };
 
-export type SignUpFormProps = SignUpFormElements & SignUpFormAction;
+export type SignUpFormProps = SignUpFormData &
+  SignUpFormElements &
+  SignUpFormAction;

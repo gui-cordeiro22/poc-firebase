@@ -33,6 +33,7 @@ export const Home: FunctionComponent = () => {
       <HomePage
         siginFormSection={
           <SignUpForm
+            title="Criar usuário"
             handleClick={handleSubmit(handleCreateUser)}
             nameInputCompositions={
               <input type="text" placeholder="Seu nome" {...register("name")} />
