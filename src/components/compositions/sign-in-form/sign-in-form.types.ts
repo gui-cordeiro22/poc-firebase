@@ -10,4 +10,8 @@ export type SignInFormElements = {
   acceptedTermsInputComposition: ReactNode;
 };
 
-export type SignInFormProps = SignInFormElements;
+export type SignInFormAction = {
+  handleClick: () => void;
+};
+
+export type SignInFormProps = SignInFormElements & SignInFormAction;

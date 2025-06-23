@@ -2,7 +2,11 @@
 import type { FunctionComponent } from "react";
 
 // Styles
-import { Container } from "./sign-in-form.styles";
+import {
+  Container,
+  TermsOfUseLabel,
+  TermsOfUseSectionWrapper,
+} from "./sign-in-form.styles";
 
 // Types
 import type { SignInFormProps } from "./sign-in-form.types";
@@ -14,9 +18,10 @@ export const SignInForm: FunctionComponent<SignInFormProps> = ({
   phoneInputCompositions,
   passwordInputCompositions,
   acceptedTermsInputComposition,
+  handleClick,
 }) => {
   return (
-    <Container>
+    <Container onSubmit={handleClick}>
       {nameInputCompositions}
 
       {emailInputCompositions}
@@ -27,7 +32,13 @@ export const SignInForm: FunctionComponent<SignInFormProps> = ({
 
       {passwordInputCompositions}
 
-      {acceptedTermsInputComposition}
+      <TermsOfUseSectionWrapper>
+        {acceptedTermsInputComposition}
+
+        <TermsOfUseLabel>Li e aceito os termos de uso.</TermsOfUseLabel>
+      </TermsOfUseSectionWrapper>
+
+      <button type="submit">Cadastrar</button>
     </Container>
   );
 };

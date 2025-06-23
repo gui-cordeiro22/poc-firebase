@@ -1,9 +1,8 @@
+// Pages
+import Home from "./pages/home-page";
+
 function App() {
-  return (
-    <>
-      <div>Teste</div>
-    </>
-  );
+  return <Home />;
 }
 
 export default App;

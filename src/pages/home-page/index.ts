@@ -1,8 +1,3 @@
-// Component
-import { HomePage } from "./home.page";
+import { Home } from "./home.page";
 
-// Types
-import type { HomePageProps } from "./home.types";
-
-export { HomePage };
-export type { HomePageProps };
+export default Home;
