@@ -23,7 +23,7 @@ export const UseAuthentication = () => {
           nome: userData.name,
           email: userData.email,
           celular: userData.phone,
-          termosDeUso: userData.termsAccepted,
+          termosDeUso: userData.termsAccepted ?? false,
         });
         console.log(`Usuário ${userData.name} criado com sucesso!`);
       }
