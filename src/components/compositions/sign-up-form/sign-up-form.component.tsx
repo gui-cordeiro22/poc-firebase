@@ -6,12 +6,12 @@ import {
   Container,
   TermsOfUseLabel,
   TermsOfUseSectionWrapper,
-} from "./sign-in-form.styles";
+} from "./sign-up-form.styles";
 
 // Types
-import type { SignInFormProps } from "./sign-in-form.types";
+import type { SignUpFormProps } from "./sign-up-form.types";
 
-export const SignInForm: FunctionComponent<SignInFormProps> = ({
+export const SignUpForm: FunctionComponent<SignUpFormProps> = ({
   nameInputCompositions,
   emailInputCompositions,
   emailConfirmationInputCompositions,

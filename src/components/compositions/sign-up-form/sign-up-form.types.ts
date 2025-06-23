@@ -10,7 +10,7 @@ export type SignUpFormData = {
   termsAccepted: boolean;
 };
 
-export type SignInFormElements = {
+export type SignUpFormElements = {
   nameInputCompositions: ReactNode;
   emailInputCompositions: ReactNode;
   emailConfirmationInputCompositions: ReactNode;
@@ -19,8 +19,8 @@ export type SignInFormElements = {
   acceptedTermsInputComposition: ReactNode;
 };
 
-export type SignInFormAction = {
+export type SignUpFormAction = {
   handleClick: () => void;
 };
 
-export type SignInFormProps = SignInFormElements & SignInFormAction;
+export type SignUpFormProps = SignUpFormElements & SignUpFormAction;
