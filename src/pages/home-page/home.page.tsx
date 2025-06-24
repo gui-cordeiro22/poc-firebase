@@ -18,8 +18,6 @@ export const Home: FunctionComponent = () => {
 
   const handleCreateUser = async (data: any) => {
     try {
-      console.log(data);
-
       const { name, email, phone, password, acceptedTerms } = data;
 
       await createUser({ name, email, phone, password, acceptedTerms });
@@ -65,7 +63,7 @@ export const Home: FunctionComponent = () => {
               />
             }
             acceptedTermsInputComposition={
-              <input type="checkbox" {...register("acceptedTerms")} />
+              <input type="checkbox" {...register("acceptedTerms")} required />
             }
           />
         }

@@ -1,14 +1,12 @@
 // Dependencies
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { getDatabase, ref, set } from "firebase/database";
+import { ref, set } from "firebase/database";
 import { toast } from "react-toastify";
 
 // Service
-import { auth } from "../../services/firebase/config";
+import { auth, dataBase } from "../../services/firebase/config";
 
 export const UseAuthentication = () => {
-  const db = getDatabase();
-
   const createUser = async (userData: any) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -20,13 +18,15 @@ export const UseAuthentication = () => {
       const user = userCredential.user;
 
       if (!!user) {
-        await set(ref(db, `users/${user.uid}`), {
+        await set(ref(dataBase, `users/${user.uid}`), {
           nome: userData.name,
           email: userData.email,
           celular: userData.phone,
           termosDeUso: userData.acceptedTerms,
         });
-        toast.success(`Usuário ${userData.name} criado com sucesso!`);
+        toast.success(
+          `${userData.name}, seu cadastro foi realizado com sucesso!`
+        );
       }
     } catch (error: any) {
       toast.error(`Erro ao criar usuário: ${error.code} - ${error.message}`);
