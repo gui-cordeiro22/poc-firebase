@@ -10,11 +10,11 @@ export type SignUpFormResponseData = {
   termsAccepted: boolean;
 };
 
-export type SignUpFormData = {
+export type FormData = {
   title: string;
 };
 
-export type SignUpFormElements = {
+export type FormElements = {
   nameInputCompositions?: ReactNode;
   emailInputCompositions?: ReactNode;
   emailConfirmationInputCompositions?: ReactNode;
@@ -24,10 +24,8 @@ export type SignUpFormElements = {
   buttonElementCompositions?: ReactNode;
 };
 
-export type SignUpFormAction = {
+export type FormAction = {
   handleClick: () => void;
 };
 
-export type SignUpFormProps = SignUpFormData &
-  SignUpFormElements &
-  SignUpFormAction;
+export type FormProps = FormData & FormElements & FormAction;

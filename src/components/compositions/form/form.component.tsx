@@ -7,12 +7,12 @@ import {
   TermsOfUseLabel,
   TermsOfUseSectionWrapper,
   Title,
-} from "./sign-up-form.styles";
+} from "./form.styles";
 
 // Types
-import type { SignUpFormProps } from "./sign-up-form.types";
+import type { FormProps } from "./form.types";
 
-export const SignUpForm: FunctionComponent<SignUpFormProps> = ({
+export const Form: FunctionComponent<FormProps> = ({
   title,
   nameInputCompositions,
   emailInputCompositions,
@@ -40,7 +40,9 @@ export const SignUpForm: FunctionComponent<SignUpFormProps> = ({
       <TermsOfUseSectionWrapper>
         {acceptedTermsInputComposition}
 
-        <TermsOfUseLabel>Li e aceito os termos de uso.</TermsOfUseLabel>
+        {!!acceptedTermsInputComposition && (
+          <TermsOfUseLabel>Li e aceito os termos de uso.</TermsOfUseLabel>
+        )}
       </TermsOfUseSectionWrapper>
 
       {buttonElementCompositions}

@@ -3,7 +3,7 @@ import { Fragment, type FunctionComponent } from "react";
 import { useForm } from "react-hook-form";
 
 // Components
-import { SignUpForm } from "../../components/compositions/sign-up-form";
+import { Form } from "../../components/compositions/form";
 import { Input } from "../../components/elements/input";
 import { Button } from "../../components/elements/button";
 
@@ -34,7 +34,7 @@ export const SignIn: FunctionComponent = () => {
     <Fragment>
       <SignInPage
         formSection={
-          <SignUpForm
+          <Form
             title="Acessar sua conta"
             handleClick={handleSubmit(handleLogInUser)}
             emailInputCompositions={
