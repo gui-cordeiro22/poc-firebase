@@ -4,14 +4,14 @@ import { useForm } from "react-hook-form";
 
 // Components
 import { SignUpForm } from "../../components/compositions/sign-up-form";
+import { Button } from "../../components/elements/button";
+import { Input } from "../../components/elements/input";
 
 // Pages
 import { HomePage } from "../../components/pages/home-page";
 
 // Hooks
 import { UseAuthentication } from "../../hooks/use-authentication";
-import { Button } from "../../components/elements/button";
-import { Input } from "../../components/elements/input";
 
 export const Home: FunctionComponent = () => {
   const { register, handleSubmit, reset } = useForm();
