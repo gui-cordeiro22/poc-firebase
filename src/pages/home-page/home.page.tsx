@@ -11,6 +11,7 @@ import { HomePage } from "../../components/pages/home-page";
 // Hooks
 import { UseAuthentication } from "../../hooks/use-authentication";
 import { Button } from "../../components/elements/button";
+import { Input } from "../../components/elements/input";
 
 export const Home: FunctionComponent = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -37,27 +38,27 @@ export const Home: FunctionComponent = () => {
             title="Criar usuário"
             handleClick={handleSubmit(handleCreateUser)}
             nameInputCompositions={
-              <input type="text" placeholder="Seu nome" {...register("name")} />
+              <Input type="text" placeholder="Seu nome" {...register("name")} />
             }
             emailInputCompositions={
-              <input
+              <Input
                 type="email"
                 placeholder="Seu e-mail"
                 {...register("email")}
               />
             }
             emailConfirmationInputCompositions={
-              <input
+              <Input
                 type="email"
                 placeholder="Confirmar e-mail"
                 {...register("confirmationEmail")}
               />
             }
             phoneInputCompositions={
-              <input type="text" placeholder="Celular" {...register("phone")} />
+              <Input type="text" placeholder="Celular" {...register("phone")} />
             }
             passwordInputCompositions={
-              <input
+              <Input
                 type="password"
                 placeholder="Sua senha"
                 {...register("password")}
