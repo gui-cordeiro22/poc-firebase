@@ -1,5 +1,8 @@
 // Dependencies
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { ref, set } from "firebase/database";
 import { toast } from "react-toastify";
 
@@ -33,7 +36,26 @@ export const UseAuthentication = () => {
     }
   };
 
+  const loginUser = async (email: string, password: string) => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      const user = userCredential.user;
+
+      if (!!user) {
+        toast.success(`Bem-vindo de volta!`);
+      }
+    } catch (error: any) {
+      toast.error(`Erro ao fazer login: ${error.code} - ${error.message}`);
+    }
+  };
+
   return {
     createUser,
+    loginUser,
   };
 };

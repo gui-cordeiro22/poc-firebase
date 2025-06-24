@@ -1,5 +1,5 @@
 // Dependencies
-import type { FunctionComponent } from "react";
+import { Fragment, type FunctionComponent } from "react";
 import { useForm } from "react-hook-form";
 
 // Components
@@ -31,7 +31,7 @@ export const Home: FunctionComponent = () => {
   };
 
   return (
-    <>
+    <Fragment>
       <HomePage
         siginFormSection={
           <SignUpForm
@@ -73,6 +73,6 @@ export const Home: FunctionComponent = () => {
           />
         }
       />
-    </>
+    </Fragment>
   );
 };
