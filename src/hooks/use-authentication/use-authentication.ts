@@ -48,9 +48,15 @@ export const UseAuthentication = () => {
 
       if (!!user) {
         toast.success(`Bem-vindo de volta!`);
+
+        return true;
       }
+
+      return false;
     } catch (error: any) {
       toast.error(`Erro ao fazer login: ${error.code} - ${error.message}`);
+
+      return false;
     }
   };
 

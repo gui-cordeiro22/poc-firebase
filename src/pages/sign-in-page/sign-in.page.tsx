@@ -1,6 +1,7 @@
 // Dependencies
 import { Fragment, type FunctionComponent } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 // Components
 import { Form } from "../../components/compositions/form";
@@ -18,13 +19,18 @@ export const SignIn: FunctionComponent = () => {
 
   const { loginUser } = UseAuthentication();
 
+  const route = useNavigate();
+
   const handleLogInUser = async (data: any) => {
     try {
       const { email, password } = data;
 
-      await loginUser(email, password);
+      const isSigned = await loginUser(email, password);
 
-      reset();
+      if (!!isSigned) {
+        reset();
+        route("/logado");
+      }
     } catch (error) {
       console.error(error);
     }
