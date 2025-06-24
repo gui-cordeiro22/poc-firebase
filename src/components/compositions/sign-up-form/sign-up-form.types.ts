@@ -15,13 +15,13 @@ export type SignUpFormData = {
 };
 
 export type SignUpFormElements = {
-  nameInputCompositions: ReactNode;
-  emailInputCompositions: ReactNode;
-  emailConfirmationInputCompositions: ReactNode;
-  phoneInputCompositions: ReactNode;
-  passwordInputCompositions: ReactNode;
-  acceptedTermsInputComposition: ReactNode;
-  buttonElementCompositions: ReactNode;
+  nameInputCompositions?: ReactNode;
+  emailInputCompositions?: ReactNode;
+  emailConfirmationInputCompositions?: ReactNode;
+  phoneInputCompositions?: ReactNode;
+  passwordInputCompositions?: ReactNode;
+  acceptedTermsInputComposition?: ReactNode;
+  buttonElementCompositions?: ReactNode;
 };
 
 export type SignUpFormAction = {
