@@ -10,6 +10,7 @@ import { HomePage } from "../../components/pages/home-page";
 
 // Hooks
 import { UseAuthentication } from "../../hooks/use-authentication";
+import { Button } from "../../components/elements/button";
 
 export const Home: FunctionComponent = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -64,6 +65,9 @@ export const Home: FunctionComponent = () => {
             }
             acceptedTermsInputComposition={
               <input type="checkbox" {...register("acceptedTerms")} required />
+            }
+            buttonElementCompositions={
+              <Button type="submit" label="Cadastrar" />
             }
           />
         }

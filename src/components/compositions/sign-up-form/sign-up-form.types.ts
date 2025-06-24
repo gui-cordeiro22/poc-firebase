@@ -21,6 +21,7 @@ export type SignUpFormElements = {
   phoneInputCompositions: ReactNode;
   passwordInputCompositions: ReactNode;
   acceptedTermsInputComposition: ReactNode;
+  buttonElementCompositions: ReactNode;
 };
 
 export type SignUpFormAction = {

@@ -20,6 +20,7 @@ export const SignUpForm: FunctionComponent<SignUpFormProps> = ({
   phoneInputCompositions,
   passwordInputCompositions,
   acceptedTermsInputComposition,
+  buttonElementCompositions,
   handleClick,
 }) => {
   return (
@@ -42,7 +43,7 @@ export const SignUpForm: FunctionComponent<SignUpFormProps> = ({
         <TermsOfUseLabel>Li e aceito os termos de uso.</TermsOfUseLabel>
       </TermsOfUseSectionWrapper>
 
-      <button type="submit">Cadastrar</button>
+      {buttonElementCompositions}
     </Container>
   );
 };
