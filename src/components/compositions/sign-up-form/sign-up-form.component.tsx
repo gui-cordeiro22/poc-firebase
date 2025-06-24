@@ -6,6 +6,7 @@ import {
   Container,
   TermsOfUseLabel,
   TermsOfUseSectionWrapper,
+  Title,
 } from "./sign-up-form.styles";
 
 // Types
@@ -23,7 +24,7 @@ export const SignUpForm: FunctionComponent<SignUpFormProps> = ({
 }) => {
   return (
     <Container onSubmit={handleClick}>
-      <h1>{title}</h1>
+      <Title>{title}</Title>
 
       {nameInputCompositions}
 

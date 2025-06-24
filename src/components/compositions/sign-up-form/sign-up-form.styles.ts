@@ -10,6 +10,10 @@ export const Container = styled.form`
   height: 100dvh;
 `;
 
+export const Title = styled.h1`
+  color: #fff;
+`;
+
 export const TermsOfUseSectionWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -18,4 +22,6 @@ export const TermsOfUseSectionWrapper = styled.div`
   gap: 10px;
 `;
 
-export const TermsOfUseLabel = styled.p``;
+export const TermsOfUseLabel = styled.p`
+  color: #fff;
+`;
