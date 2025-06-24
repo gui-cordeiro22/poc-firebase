@@ -12,7 +12,7 @@ import { HomePage } from "../../components/pages/home-page";
 import { UseAuthentication } from "../../hooks/use-authentication";
 
 export const Home: FunctionComponent = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const { createUser } = UseAuthentication();
 
@@ -20,9 +20,11 @@ export const Home: FunctionComponent = () => {
     try {
       console.log(data);
 
-      const { name, email, phone, password, termsAccepted } = data;
+      const { name, email, phone, password, acceptedTerms } = data;
 
-      await createUser({ name, email, phone, password, termsAccepted });
+      await createUser({ name, email, phone, password, acceptedTerms });
+
+      reset();
     } catch (error) {
       console.error(error);
     }

@@ -24,7 +24,7 @@ export const UseAuthentication = () => {
           nome: userData.name,
           email: userData.email,
           celular: userData.phone,
-          termosDeUso: userData.termsAccepted ?? false,
+          termosDeUso: userData.acceptedTerms,
         });
         toast.success(`Usuário ${userData.name} criado com sucesso!`);
       }
