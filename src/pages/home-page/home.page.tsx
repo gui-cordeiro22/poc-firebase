@@ -1,77 +1,40 @@
 // Dependencies
-import { Fragment, type FunctionComponent } from "react";
-import { useForm } from "react-hook-form";
-
-// Components
-import { Form } from "../../components/compositions/form";
-import { Button } from "../../components/elements/button";
-import { Input } from "../../components/elements/input";
+import { Fragment, useEffect, useState, type FunctionComponent } from "react";
+import { onValue, ref } from "firebase/database";
 
 // Pages
 import { HomePage } from "../../components/pages/home-page";
 
-// Hooks
-import { UseAuthentication } from "../../hooks/use-authentication";
+// Services
+import { dataBase } from "../../services/firebase/config";
 
 export const Home: FunctionComponent = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const [data, setData] = useState<any[]>();
 
-  const { createUser } = UseAuthentication();
+  useEffect(() => {
+    const query = ref(dataBase, "teste-cordeiro");
 
-  const handleCreateUser = async (data: any) => {
-    try {
-      const { name, email, phone, password, acceptedTerms } = data;
+    return onValue(query, (snapshot) => {
+      if (snapshot.exists()) {
+        const response = snapshot.val();
+        const values = Object.values(response);
+        setData(values);
+      }
+    });
+  }, []);
 
-      await createUser({ name, email, phone, password, acceptedTerms });
-
-      reset();
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  console.log("Data: ", data);
 
   return (
     <Fragment>
       <HomePage
-        siginFormSection={
-          <Form
-            title="Criar usuário"
-            handleClick={handleSubmit(handleCreateUser)}
-            nameInputCompositions={
-              <Input type="text" placeholder="Seu nome" {...register("name")} />
-            }
-            emailInputCompositions={
-              <Input
-                type="email"
-                placeholder="Seu e-mail"
-                {...register("email")}
-              />
-            }
-            emailConfirmationInputCompositions={
-              <Input
-                type="email"
-                placeholder="Confirmar e-mail"
-                {...register("confirmationEmail")}
-              />
-            }
-            phoneInputCompositions={
-              <Input type="text" placeholder="Celular" {...register("phone")} />
-            }
-            passwordInputCompositions={
-              <Input
-                type="password"
-                placeholder="Sua senha"
-                {...register("password")}
-              />
-            }
-            acceptedTermsInputComposition={
-              <input type="checkbox" {...register("acceptedTerms")} required />
-            }
-            buttonElementCompositions={
-              <Button type="submit" label="Cadastrar" />
-            }
-          />
-        }
+        siginFormSection={(data ?? []).map((item, index) => (
+          <ul>
+            <li key={`user-${index}`} style={{ color: "#fff" }}>
+              {item.nome}
+            </li>
+          </ul>
+        ))}
       />
     </Fragment>
   );

@@ -7,5 +7,10 @@ import type { HomePageProps } from "./home.types";
 export const HomePage: FunctionComponent<HomePageProps> = ({
   siginFormSection,
 }) => {
-  return <Fragment>{siginFormSection}</Fragment>;
+  return (
+    <Fragment>
+      <h1 style={{ color: "#fff" }}>Lista de Usuários</h1>
+      {siginFormSection}
+    </Fragment>
+  );
 };
